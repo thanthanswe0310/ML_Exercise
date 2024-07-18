@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h2 style="color:rgb(0, 139, 139);margin-left:550px;">Movie List</h2>
+</div>
+<head>
+<style>
+.container input {
+  margin-left: 380px;
+  width: 450px;
+  clear: both;
+  height: 30px;
+  border-radius: 3px;
+}
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: rgb(0, 139, 139); 
+    font-size:15px;
+    border-radius:5px;
+
+
+} 
+.button {
+    margin-left: 550px;
+    position: absolute;
+    border-radius: 15px;
+    width: 150px;
+    color: rgb(0, 139, 139); 
+
+}
+</style>
+</head>
+  <form action="{{url_for('recommend')}}">
+    <input type="text" name="movie" class="form-control" style="color:rgb(0, 139, 139);" placeholder="Please Enter your movie name here" autocomplete="Open" required="required"><br><br>
+    <button class="button"  value="Submit">Submit</button>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if t=='s'%}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2 style="color:rgb(0, 139, 139);margin-left:350px;">This movie title does not have in this recommender system.</h2>
+    <h2 style="color:rgb(0, 139, 139);margin-left:400px;">Please Check Your Movie Title Again......</h2>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2 style="color:rgb(0, 139, 139);margin-left:480px;">"{{movie}}" Movie.</h2>
+    <h3 style="color: rgb(0, 139, 139);margin-left:480px;">Here are some more reviews ...</h3>
+  </div>
+
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item" style="color: rgb(0, 139, 139);margin-left:530px;"><strong>{{m|capitalize}}</strong></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
